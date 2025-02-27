@@ -20,7 +20,6 @@
       <change beforePath="$PROJECT_DIR$/.yarn/cache/typescript-patch-e50fdcf519-1cb434fbc6.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/activities/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/activities/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BottomTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BottomTab.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stackflow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stackflow.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -68,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740676972896</updated>
-      <workItem from="1740676976314" duration="2052000" />
+      <workItem from="1740676976314" duration="2727000" />
     </task>
     <servers />
   </component>
