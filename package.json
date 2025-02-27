@@ -7,6 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.20.6",
     "@seed-design/design-token": "^1.0.0-alpha.0",
     "@seed-design/stylesheet": "^1.0.0-beta.1",
     "@stackflow/core": "^0.17.0",

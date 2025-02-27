@@ -5,6 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7b410f5-f9d1-47b3-8938-2369752ce422" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dating-demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/activities/Chats.css.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/activities/Chats.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/activities/Gift.css.ts" afterDir="false" />
@@ -13,6 +19,7 @@
       <change afterPath="$PROJECT_DIR$/src/activities/MapTab.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/activities/My.css.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/activities/My.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.pnp.cjs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.pnp.loader.mjs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.yarn/cache/resolve-patch-46f9469d0d-5656f4d0be.zip" beforeDir="false" />
@@ -43,14 +50,15 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/sanghoonlee/Desktop/stackflow-example-nextjs/src/activities",
+    "last_opened_file_path": "/Users/sanghoonlee/Desktop/dating-demo/src/activities",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "/Users/sanghoonlee/Desktop/stackflow-example-nextjs/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/sanghoonlee/Desktop/dating-demo/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -68,6 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1740676972896</updated>
       <workItem from="1740676976314" duration="2727000" />
+      <workItem from="1740682630273" duration="774000" />
     </task>
     <servers />
   </component>

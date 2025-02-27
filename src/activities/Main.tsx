@@ -19,7 +19,7 @@ const Main: ActivityComponentType = () => {
 
   const appBarLeft = () => (
     <div className={css.appBarLeft}>
-      Woolston
+      Main
       <div className={css.appBarLeftIcon}>
         <IconExpandMore />
       </div>
