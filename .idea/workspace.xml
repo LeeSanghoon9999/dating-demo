@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7b410f5-f9d1-47b3-8938-2369752ce422" name="Changes" comment="" />
+    <list default="true" id="f7b410f5-f9d1-47b3-8938-2369752ce422" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarnrc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.yarnrc.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1740676972896</updated>
       <workItem from="1740676976314" duration="2727000" />
-      <workItem from="1740682630273" duration="1087000" />
+      <workItem from="1740682630273" duration="1536000" />
     </task>
     <servers />
   </component>
