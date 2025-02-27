@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f7b410f5-f9d1-47b3-8938-2369752ce422" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/activities/Chats.css.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/activities/Chats.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/activities/Gift.css.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/activities/Gift.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/activities/MapTab.css.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/activities/MapTab.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/activities/My.css.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/activities/My.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.pnp.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.pnp.loader.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarn/cache/resolve-patch-46f9469d0d-5656f4d0be.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarn/cache/resolve-patch-bdbf6a2444-4bf9f4f8a4.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarn/cache/typescript-patch-e50fdcf519-1cb434fbc6.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/activities/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/activities/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BottomTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BottomTab.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stackflow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stackflow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2tdLOV5xbRES4xgfj5rZIDiaGw4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/sanghoonlee/Desktop/stackflow-example-nextjs/src/activities",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "/Users/sanghoonlee/Desktop/stackflow-example-nextjs/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/activities" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f7b410f5-f9d1-47b3-8938-2369752ce422" name="Changes" comment="" />
+      <created>1740676972896</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740676972896</updated>
+      <workItem from="1740676976314" duration="2052000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
