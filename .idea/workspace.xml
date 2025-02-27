@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7b410f5-f9d1-47b3-8938-2369752ce422" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dating-demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/activities/Chats.css.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/activities/Chats.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/activities/Gift.css.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/activities/Gift.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/activities/MapTab.css.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/activities/MapTab.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/activities/My.css.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/activities/My.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pnp.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pnp.loader.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/resolve-patch-46f9469d0d-5656f4d0be.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/resolve-patch-bdbf6a2444-4bf9f4f8a4.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/typescript-patch-e50fdcf519-1cb434fbc6.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/activities/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/activities/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stackflow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stackflow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="f7b410f5-f9d1-47b3-8938-2369752ce422" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1740676972896</updated>
       <workItem from="1740676976314" duration="2727000" />
-      <workItem from="1740682630273" duration="774000" />
+      <workItem from="1740682630273" duration="1087000" />
     </task>
     <servers />
   </component>
