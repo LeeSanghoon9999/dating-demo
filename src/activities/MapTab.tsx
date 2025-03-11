@@ -1,65 +1,67 @@
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { useActivityPreloadRef } from "@stackflow/plugin-preload";
-import { ActivityComponentType } from "@stackflow/react";
-import React, { useState } from "react";
+import { ActivityComponentType, useActivityParams } from "@stackflow/react";
+import React, { useEffect,useState } from "react";
 
-import IconBell from "../assets/IconBell";
-import IconExpandMore from "../assets/IconExpandMore";
-import IconSearch from "../assets/IconSearch";
-import IconSettings from "../assets/IconSettings";
-import BottomTab from "../components/BottomTab";
-import MapCard from "../components/FeedCard";
-// ✅ Next.js에서 프리로드된 PageProps를 읽어오는 함수
+import FeedCard from "../components/FeedCard";
+import MapLoading from "../components/MapLoading";
 import { readPageProps } from "../lib/readPageProps";
-// CSS 모듈
+import { MainPageProps } from "../pages";
+import AppLayout from "./AppLayout";
 import * as css from "./MapTab.css";
 
-// 기본 서울 중심 좌표
+// 기본 서울 좌표
 const defaultCenter = {
     lat: 37.5665,
     lng: 126.9780,
 };
 
-// ✅ Gatsby에서의 GraphQL 결과를 대체할 수 있는 PageProps 타입 예시
-type MarkdownNode = {
-    frontmatter?: {
-        id?: string;
-        daysAgo?: number;
-        price?: number;
-        regionName?: string;
-        title?: string;
-    };
-};
-
-export type MapTabPageProps = {
-    allMarkdownRemark?: {
-        nodes?: MarkdownNode[];
-    };
-};
-
 const MapTab: ActivityComponentType = () => {
-    // Next.js 스타일로 프리로드된 props를 가져옴
+    // Main에서 준비한 페이지 프롭스를 재사용 (공통 키 "Main" 사용)
     const preloadRef = useActivityPreloadRef<{ key: string }>();
-    // Gatsby의 readPreloadData 대신 Next.js의 readPageProps 사용
-    const pageProps = readPageProps<MapTabPageProps>(preloadRef);
+    const pageProps = readPageProps<MainPageProps>(preloadRef);
 
-    // 사용자의 현재 위치 상태 (없으면 null)
-    const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
+    // URL 파라미터로 전달된 lat, lng는 문자열이므로 숫자로 파싱
+    const { lat, lng } = useActivityParams<{ lat?: string; lng?: string }>();
 
-    // GPS를 통해 현재 위치를 찾는 함수
+    // 초기 위치: sessionStorage에서 읽어오거나, URL 파라미터가 있으면 사용
+    const getInitialLocation = (): { lat: number; lng: number } | null => {
+        if (typeof window !== "undefined") {
+            const stored = sessionStorage.getItem("userLocation");
+            if (stored) {
+                return JSON.parse(stored);
+            }
+        }
+        if (lat !== undefined && lng !== undefined) {
+            return { lat: parseFloat(lat), lng: parseFloat(lng) };
+        }
+        return null;
+    };
+
+    const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(
+        getInitialLocation()
+    );
+
+    // 만약 컴포넌트 마운트 후에 sessionStorage가 변경되었을 경우 업데이트
+    useEffect(() => {
+        const stored = sessionStorage.getItem("userLocation");
+        if (stored) {
+            setUserLocation(JSON.parse(stored));
+        }
+    }, []);
+
     const handleFindMyLocation = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
-                    setUserLocation({
+                    const loc = {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude,
-                    });
+                    };
+                    setUserLocation(loc);
+                    sessionStorage.setItem("userLocation", JSON.stringify(loc));
                 },
                 (error) => {
                     console.error("현재 위치를 가져오는데 실패했습니다.", error);
-                    // 필요하면 사용자에게 알림 처리 가능
                 }
             );
         } else {
@@ -67,88 +69,40 @@ const MapTab: ActivityComponentType = () => {
         }
     };
 
-    // 지도 중심은 userLocation이 있으면 해당 값, 없으면 기본 center 사용
-    const mapCenter = userLocation || defaultCenter;
-
-    const appBarLeft = () => (
-        <div className={css.appBarLeft}>
-            Map
-            <div className={css.appBarLeftIcon}>
-                <IconExpandMore />
-            </div>
-        </div>
-    );
-
-    const appBarRight = () => (
-        <div className={css.appBarRight}>
-            <IconSearch />
-            <IconSettings />
-            <IconBell />
-        </div>
-    );
+    const mapCenterValue = userLocation || defaultCenter;
 
     return (
-        <AppScreen
-            appBar={{
-                appendLeft: appBarLeft,
-                appendRight: appBarRight,
-            }}
-        >
-            <div className={css.wrapper}>
-                {/* 구글맵 영역 */}
-                <LoadScript googleMapsApiKey="AIzaSyD5m_Luc1EQB604BRDoNwTosiu6HTTePgE">
-                    <GoogleMap
-                        mapContainerClassName={css.mapContainer}
-                        center={mapCenter}
-                        zoom={12}
-                    >
-                        {/* 기본 마커 (서울)와 userLocation이 있으면 추가 마커 표시 */}
-                        <Marker position={defaultCenter} />
-                        {userLocation && <Marker position={userLocation} />}
-                    </GoogleMap>
-                </LoadScript>
+        <AppLayout>
+            {/* 전역 Provider로 로드된 Google Maps 활용 */}
+            <MapLoading center={mapCenterValue} userLocation={userLocation} />
 
-                {/* 내 위치 찾기 버튼 */}
-                {/* eslint-disable-next-line react/button-has-type */}
-                <button
-                    onClick={handleFindMyLocation}
-                    style={{
-                        margin: "1rem",
-                        padding: "0.5rem 1rem",
-                        borderRadius: "4px",
-                        border: "none",
-                        backgroundColor: "#007bff",
-                        color: "#fff",
-                        cursor: "pointer",
-                    }}
-                >
-                    내 위치 찾기
-                </button>
+            <button
+                type="button"
+                onClick={handleFindMyLocation}
+                style={{
+                    margin: "1rem",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "4px",
+                    border: "none",
+                    backgroundColor: "#007bff",
+                    color: "#fff",
+                    cursor: "pointer",
+                }}
+            >
+                내 위치 찾기
+            </button>
 
-                {/* 스크롤 가능한 피드 목록 영역 */}
-                <div className={css.scrollable}>
-                    {pageProps.allMarkdownRemark?.nodes?.length ? (
-                        pageProps.allMarkdownRemark.nodes.map((node) => (
-                            <MapCard
-                                key={String(node.frontmatter?.id ?? "default-id")}
-                                articleId={String(node.frontmatter?.id ?? "default-id")}
-                                daysAgo={node.frontmatter?.daysAgo ?? 0}
-                                price={node.frontmatter?.price ?? 0}
-                                region={node.frontmatter?.regionName ?? "Unknown"}
-                                title={node.frontmatter?.title ?? "No Title"}
-                            />
-                        ))
-                    ) : (
-                        <p>No Map available</p>
-                    )}
-                </div>
-
-                {/* 하단 탭 네비게이션 */}
-                <div className={css.bottom}>
-                    <BottomTab />
-                </div>
-            </div>
-        </AppScreen>
+            {pageProps?.articles?.map((article) => (
+                <FeedCard
+                    key={article.articleId}
+                    articleId={article.articleId}
+                    daysAgo={article.daysAgo}
+                    price={article.price}
+                    region={article.region}
+                    title={article.title}
+                />
+            )) || <div>Loading...</div>}
+        </AppLayout>
     );
 };
 

@@ -212,6 +212,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.7.6":
+  version: 7.26.9
+  resolution: "@babel/runtime@npm:7.26.9"
+  dependencies:
+    regenerator-runtime: ^0.14.0
+  checksum: 838492d8a925092f9ccfbd82ec183a54f430af3a4ce88fb1337a4570629202d5123bad3097a5b8df53822504d12ccb29f45c0f6842e86094f0164f17a51eec92
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.12.13, @babel/template@npm:^7.18.6":
   version: 7.18.6
   resolution: "@babel/template@npm:7.18.6"
@@ -577,6 +586,62 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@redis/bloom@npm:1.2.0":
+  version: 1.2.0
+  resolution: "@redis/bloom@npm:1.2.0"
+  peerDependencies:
+    "@redis/client": ^1.0.0
+  checksum: 8c214227287d6b278109098bca00afc601cf84f7da9c6c24f4fa7d3854b946170e5893aa86ed607ba017a4198231d570541c79931b98b6d50b262971022d1d6c
+  languageName: node
+  linkType: hard
+
+"@redis/client@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@redis/client@npm:1.6.0"
+  dependencies:
+    cluster-key-slot: 1.1.2
+    generic-pool: 3.9.0
+    yallist: 4.0.0
+  checksum: c01c89a793541dc6908a97f375fec3ac28bed7f92b1c20351a3073ce75c0263998a30c3316cbb76e6a4403059d9982d40aec0bc8f1b3cab43615edaaf05980da
+  languageName: node
+  linkType: hard
+
+"@redis/graph@npm:1.1.1":
+  version: 1.1.1
+  resolution: "@redis/graph@npm:1.1.1"
+  peerDependencies:
+    "@redis/client": ^1.0.0
+  checksum: caf9b9a3ff82a08ae543c356a3fed548399ae79aba5ed08ce6cf1b522b955eb5cee4406b0ed0c6899345f8fbc06dfd6cd51304ae8422c3ebbc468f53294dc509
+  languageName: node
+  linkType: hard
+
+"@redis/json@npm:1.0.7":
+  version: 1.0.7
+  resolution: "@redis/json@npm:1.0.7"
+  peerDependencies:
+    "@redis/client": ^1.0.0
+  checksum: a84d51c06a2af9a42eff5a6db795e7c0f7ada27d958f5d762b6f9778f413399dbe6a0c2ab00dd7ccc5fdab5f2940afbab4a56c2b1c284a2326d0f79965d5bba1
+  languageName: node
+  linkType: hard
+
+"@redis/search@npm:1.2.0":
+  version: 1.2.0
+  resolution: "@redis/search@npm:1.2.0"
+  peerDependencies:
+    "@redis/client": ^1.0.0
+  checksum: 256ddf8b30f216b605e571c9085e0efd5e3b43229b57db8ba0eea3376540ada437b68509c3bb0354e3c784f5fa1b825593cc602ebbfc5cbfa9e46d5c7be67eb6
+  languageName: node
+  linkType: hard
+
+"@redis/time-series@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@redis/time-series@npm:1.1.0"
+  peerDependencies:
+    "@redis/client": ^1.0.0
+  checksum: 785f024e1c83866708beb254f765e561ccd6e6caad61b697223b3355ee92ca1e99a4d312c4ce03a3d6a29a223f38a2ec844c80b47990fa3bd9ddc56a30c1376f
+  languageName: node
+  linkType: hard
+
 "@seed-design/design-token@npm:^1.0.0-alpha.0":
   version: 1.0.0-beta.0
   resolution: "@seed-design/design-token@npm:1.0.0-beta.0"
@@ -591,12 +656,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stackflow/core@npm:^0.17.0":
-  version: 0.17.0
-  resolution: "@stackflow/core@npm:0.17.0"
+"@stackflow/core@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@stackflow/core@npm:1.2.0"
   dependencies:
-    react-fast-compare: ^3.2.0
-  checksum: 82c9518fd2abc0d289d2db11ee8135107054d0affcf996e585bf269d52811cdacb11e9bd7492247e96e0afd0e9d714cc051a56172ea1c8f759e3bd1c61f47aab
+    react-fast-compare: ^3.2.2
+  checksum: 92a767c4fb85732374ce696c16fd51a9f34d50521a348477f5f751eb08cd1b97a8342125d81ed6c5b3336cd2e3f369fa2d37f4ce4f1d87a2f9a98fc8698484b4
   languageName: node
   linkType: hard
 
@@ -614,20 +679,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stackflow/plugin-basic-ui@npm:^0.17.0":
-  version: 0.17.0
-  resolution: "@stackflow/plugin-basic-ui@npm:0.17.0"
+"@stackflow/plugin-basic-ui@npm:^1.12.0":
+  version: 1.12.0
+  resolution: "@stackflow/plugin-basic-ui@npm:1.12.0"
   dependencies:
-    "@vanilla-extract/dynamic": ^2.0.2
-    "@vanilla-extract/private": ^1.0.3
-    "@vanilla-extract/recipes": ^0.2.5
-    ts-pattern: ^4.0.5
+    "@stackflow/react-ui-core": ^1.2.1
+    "@vanilla-extract/css": ^1.15.3
+    "@vanilla-extract/dynamic": ^2.1.1
+    "@vanilla-extract/private": ^1.0.5
+    "@vanilla-extract/recipes": ^0.5.3
   peerDependencies:
-    "@stackflow/core": 0
-    "@stackflow/react": 0
+    "@stackflow/core": ^1.1.0-canary.0
+    "@stackflow/react": ^1.3.2-canary.0
     "@types/react": ">=16.8.0"
     react: ">=16.8.0"
-  checksum: 258ff7cae33936eceedace6ab222c3dcf41349c9ab70e8d749ea5815c0771264d120c31d95c264413ad247c8fdb93284828a3bad3e8f41e5cbf6c402356ac431
+  checksum: fba100b43135968f8496eb065ae3efd27069e46b79b90e6cc42bbf5c42507a447519e7c084b85b7d194a0d965dda4d17998bd4feb79105917ba5d3eb7eedaaef
   languageName: node
   linkType: hard
 
@@ -659,28 +725,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stackflow/plugin-renderer-basic@npm:^0.17.0":
-  version: 0.17.0
-  resolution: "@stackflow/plugin-renderer-basic@npm:0.17.0"
+"@stackflow/plugin-renderer-basic@npm:^1.1.13":
+  version: 1.1.13
+  resolution: "@stackflow/plugin-renderer-basic@npm:1.1.13"
   peerDependencies:
-    "@stackflow/core": 0
-    "@stackflow/react": 0
+    "@stackflow/core": ^1.1.0-canary.0
+    "@stackflow/react": ^1.3.2-canary.0
     "@types/react": ">=16.8.0"
     react: ">=16.8.0"
-  checksum: 4397d550521f28445485a7e18147625e99929c1e42272e8ac4be18e3afb9f89d9336661771ab47afbaf82c7b4f9a704fc3529fa81a7492d6dcdcc0ae8c68dcc5
+  checksum: fc3553cf3cc1cf79796517ee7ceff3da32b033c588fb709ba5adbaf80cef7b0966265793dfbc2ee33deb298e204f2b4f2b308905b56e4cefe5470ecd7ac9ef9c
   languageName: node
   linkType: hard
 
-"@stackflow/react@npm:^0.17.0":
-  version: 0.17.0
-  resolution: "@stackflow/react@npm:0.17.0"
-  dependencies:
-    react-fast-compare: ^3.2.0
+"@stackflow/react-ui-core@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@stackflow/react-ui-core@npm:1.2.1"
   peerDependencies:
-    "@stackflow/core": 0
+    "@stackflow/core": ^1.1.0-canary.0
+    "@stackflow/react": ^1.3.2-canary.0
     "@types/react": ">=16.8.0"
     react: ">=16.8.0"
-  checksum: b259a4e1dad8cb71c157092c66977703c6b2dbb04f6ca12ebc8f80417dfe25546e882c9f4b9b8926bf56fe09d8c0978fd6dc79ad91610b583b9912c62508f556
+  checksum: 0f4d40497afb43fe937117ce65d15583bcc180e6f7982bea33b2f4aee07425f1de0d2de0396474f65dcf82a78b9750e17cb3a6dc1cf81dbcb7363940d48bc35f
+  languageName: node
+  linkType: hard
+
+"@stackflow/react@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "@stackflow/react@npm:1.5.1"
+  dependencies:
+    history: ^5.3.0
+    react-fast-compare: ^3.2.2
+    url-pattern: ^1.0.3
+  peerDependencies:
+    "@stackflow/config": ^1.0.1-canary.0
+    "@stackflow/core": ^1.1.0-canary.0
+    "@types/react": ">=16.8.0"
+    react: ">=16.8.0"
+  checksum: 439f6815c1a32189eecb75787ce68883e5e1dc46b482554d8742e46cf017e4a988ae130e71608501ef1af4dbbd44cb39c0339d5d2ad2dde99bb6519a36cb3294
   languageName: node
   linkType: hard
 
@@ -882,7 +963,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/css@npm:^1.17.1":
+"@vanilla-extract/css@npm:^1.15.3, @vanilla-extract/css@npm:^1.17.1":
   version: 1.17.1
   resolution: "@vanilla-extract/css@npm:1.17.1"
   dependencies:
@@ -921,12 +1002,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/dynamic@npm:^2.0.2":
-  version: 2.0.3
-  resolution: "@vanilla-extract/dynamic@npm:2.0.3"
+"@vanilla-extract/dynamic@npm:^2.1.1":
+  version: 2.1.2
+  resolution: "@vanilla-extract/dynamic@npm:2.1.2"
   dependencies:
-    "@vanilla-extract/private": ^1.0.3
-  checksum: 9ad4068d7e28361a7aca46b5f14094e74613428fb600e54227d8ba7a35926c0d7339de1876eb2b3563f6d97c0f08fa09d5ff597f76776f8edca37510165682b0
+    "@vanilla-extract/private": ^1.0.6
+  checksum: ec6ec9b02c7ec8a9d60aebf63225fd3f930c06ad824321f03f683f1948eb6d4e554d934303da140b3230b4af2fa15bab494c6da2a3b9a172e4118c245b4f942a
   languageName: node
   linkType: hard
 
@@ -964,19 +1045,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/private@npm:^1.0.6":
+"@vanilla-extract/private@npm:^1.0.5, @vanilla-extract/private@npm:^1.0.6":
   version: 1.0.6
   resolution: "@vanilla-extract/private@npm:1.0.6"
   checksum: 2265b02af29d8cd40f6ddeeed197fb2df1a7695f5a9821d5e3597677179be8b83bcd8fe4df4a6178544f89123d745a3c6a13599d4fe4e5873b065a8ad329f690
   languageName: node
   linkType: hard
 
-"@vanilla-extract/recipes@npm:^0.2.5":
-  version: 0.2.5
-  resolution: "@vanilla-extract/recipes@npm:0.2.5"
+"@vanilla-extract/recipes@npm:^0.5.3":
+  version: 0.5.5
+  resolution: "@vanilla-extract/recipes@npm:0.5.5"
   peerDependencies:
     "@vanilla-extract/css": ^1.0.0
-  checksum: 474ab445f4166bded294d5f77e02ba9b10ec6effe08364c03396e2802848d904a2a1dd9b20466405ebda93449c5a634c2fe99cd1d12888b0f84accf4d2d72666
+  checksum: 8d2b4f8163369424226ec9a47e754002b8a095bcf86c1a60a91b2183f59508519bd31ed41baefc950ad7ca225d75b3184c3b84d3c741c5c60d91618dd70452aa
   languageName: node
   linkType: hard
 
@@ -1565,6 +1646,13 @@ __metadata:
     execa: ^1.0.0
     is-wsl: ^2.1.1
   checksum: 2733790bc8bbb76a5be7706fa4632f655010774e579a9d3ebe31dc10cf44a2b82cf07b0b6f74162e63048ce32d912193c08c5b5311dce5c19fc641a3bda1292b
+  languageName: node
+  linkType: hard
+
+"cluster-key-slot@npm:1.1.2":
+  version: 1.1.2
+  resolution: "cluster-key-slot@npm:1.1.2"
+  checksum: be0ad2d262502adc998597e83f9ded1b80f827f0452127c5a37b22dfca36bab8edf393f7b25bb626006fb9fb2436106939ede6d2d6ecf4229b96a47f27edd681
   languageName: node
   linkType: hard
 
@@ -2513,6 +2601,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"generic-pool@npm:3.9.0":
+  version: 3.9.0
+  resolution: "generic-pool@npm:3.9.0"
+  checksum: 3d89e9b2018d2e3bbf44fec78c76b2b7d56d6a484237aa9daf6ff6eedb14b0899dadd703b5d810219baab2eb28e5128fb18b29e91e602deb2eccac14492d8ca8
+  languageName: node
+  linkType: hard
+
 "gensync@npm:^1.0.0-beta.2":
   version: 1.0.0-beta.2
   resolution: "gensync@npm:1.0.0-beta.2"
@@ -2701,6 +2796,15 @@ __metadata:
   dependencies:
     function-bind: ^1.1.1
   checksum: b9ad53d53be4af90ce5d1c38331e712522417d017d5ef1ebd0507e07c2fbad8686fffb8e12ddecd4c39ca9b9b47431afbb975b8abf7f3c3b82c98e9aad052792
+  languageName: node
+  linkType: hard
+
+"history@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "history@npm:5.3.0"
+  dependencies:
+    "@babel/runtime": ^7.7.6
+  checksum: d73c35df49d19ac172f9547d30a21a26793e83f16a78386d99583b5bf1429cc980799fcf1827eb215d31816a6600684fba9686ce78104e23bd89ec239e7c726f
   languageName: node
   linkType: hard
 
@@ -3835,10 +3939,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-fast-compare@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "react-fast-compare@npm:3.2.0"
-  checksum: 8ef272c825ae329f61633ce4ce7f15aa5b84e5214d88bc0823880236e03e985a13195befa2c7a4eda7db3b017dc7985729152d88445823f652403cf36c2b86aa
+"react-fast-compare@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "react-fast-compare@npm:3.2.2"
+  checksum: 2071415b4f76a3e6b55c84611c4d24dcb12ffc85811a2840b5a3f1ff2d1a99be1020d9437ee7c6e024c9f4cbb84ceb35e48cf84f28fcb00265ad2dfdd3947704
   languageName: node
   linkType: hard
 
@@ -3871,10 +3975,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"redis@npm:^4.7.0":
+  version: 4.7.0
+  resolution: "redis@npm:4.7.0"
+  dependencies:
+    "@redis/bloom": 1.2.0
+    "@redis/client": 1.6.0
+    "@redis/graph": 1.1.1
+    "@redis/json": 1.0.7
+    "@redis/search": 1.2.0
+    "@redis/time-series": 1.1.0
+  checksum: 625172dd913118241288c33f351cda42630819bc82a1dc31f22e1d3e0a4267075ecb851aecfaf106a0c73ff287a434a3df3d2a8ce46713acf68d34d66efc39ec
+  languageName: node
+  linkType: hard
+
 "regenerator-runtime@npm:^0.13.4":
   version: 0.13.9
   resolution: "regenerator-runtime@npm:0.13.9"
   checksum: 65ed455fe5afd799e2897baf691ca21c2772e1a969d19bb0c4695757c2d96249eb74ee3553ea34a91062b2a676beedf630b4c1551cc6299afb937be1426ec55e
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.14.0":
+  version: 0.14.1
+  resolution: "regenerator-runtime@npm:0.14.1"
+  checksum: 9f57c93277b5585d3c83b0cf76be47b473ae8c6d9142a46ce8b0291a04bb2cf902059f0f8445dcabb3fb7378e5fe4bb4ea1e008876343d42e46d3b484534ce38
   languageName: node
   linkType: hard
 
@@ -4234,13 +4359,13 @@ __metadata:
     "@react-google-maps/api": ^2.20.6
     "@seed-design/design-token": ^1.0.0-alpha.0
     "@seed-design/stylesheet": ^1.0.0-beta.1
-    "@stackflow/core": ^0.17.0
+    "@stackflow/core": ^1.2.0
     "@stackflow/link": ^0.17.0
-    "@stackflow/plugin-basic-ui": ^0.17.0
+    "@stackflow/plugin-basic-ui": ^1.12.0
     "@stackflow/plugin-history-sync": ^0.17.0
     "@stackflow/plugin-preload": ^0.17.0
-    "@stackflow/plugin-renderer-basic": ^0.17.0
-    "@stackflow/react": ^0.17.0
+    "@stackflow/plugin-renderer-basic": ^1.1.13
+    "@stackflow/react": ^1.5.1
     "@types/node": ^18.0.3
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
@@ -4263,6 +4388,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-lazy-load-image-component: ^1.5.4
+    redis: ^4.7.0
     serve: ^13.0.4
     ts-dedent: ^2.2.0
     typescript: 4.6
@@ -4483,13 +4609,6 @@ __metadata:
   version: 2.2.0
   resolution: "ts-dedent@npm:2.2.0"
   checksum: 93ed8f7878b6d5ed3c08d99b740010eede6bccfe64bce61c5a4da06a2c17d6ddbb80a8c49c2d15251de7594a4f93ffa21dd10e7be75ef66a4dc9951b4a94e2af
-  languageName: node
-  linkType: hard
-
-"ts-pattern@npm:^4.0.5":
-  version: 4.0.6
-  resolution: "ts-pattern@npm:4.0.6"
-  checksum: d65d715f5269d6264253e11e89a6f2ff576382e7efecc080747540454cda489d302ffe0c8f096fac72efe0b106ee1d6bfd662d1a5d77dbc831801ec490bef95c
   languageName: node
   linkType: hard
 
@@ -4777,7 +4896,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yallist@npm:^4.0.0":
+"yallist@npm:4.0.0, yallist@npm:^4.0.0":
   version: 4.0.0
   resolution: "yallist@npm:4.0.0"
   checksum: 343617202af32df2a15a3be36a5a8c0c8545208f3d3dfbc6bb7c3e3b7e8c6f8e7485432e4f3b88da3031a6e20afa7c711eded32ddfb122896ac5d914e75848d5

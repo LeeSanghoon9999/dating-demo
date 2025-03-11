@@ -1,4 +1,4 @@
-import { useActions } from "@stackflow/react";
+import { useActions, useActivity } from "@stackflow/react";
 import React from "react";
 
 import IconChatting from "../assets/IconChatting";
@@ -9,14 +9,27 @@ import IconSell from "../assets/IconSell";
 import * as css from "./BottomTab.css";
 
 const BottomTab: React.FC = () => {
-    const { push } = useActions();
+    const { push, replace } = useActions();
+    const { name: currentActivity } = useActivity(); // 현재 활성화된 액티비티 이름 가져오기
+
+    const handlePush = (activityName: string) => {
+        if (currentActivity !== activityName) {
+            push(activityName, {}, { animate: true });
+        }
+    };
+
+    const handleReplace = (activityName: string) => {
+        if (currentActivity !== activityName) {
+            replace(activityName, {}, { animate: true });
+        }
+    };
 
     return (
         <div className={css.container}>
             <button
                 type="button"
                 className={css.button}
-                onClick={() => push("Main", { transitionType: "horizontal" }, { animate: true })}
+                onClick={() => handleReplace("Main")}
             >
                 <div className={css.buttonIcon}>
                     <IconHome />
@@ -27,7 +40,7 @@ const BottomTab: React.FC = () => {
             <button
                 type="button"
                 className={css.button}
-                onClick={() => push("MapTab", { transitionType: "horizontal" }, { animate: true })}
+                onClick={() => handleReplace("MapTab")}
             >
                 <div className={css.buttonIcon}>
                     <IconMenu />
@@ -38,7 +51,7 @@ const BottomTab: React.FC = () => {
             <button
                 type="button"
                 className={css.button}
-                onClick={() => push("Gift", { transitionType: "horizontal" }, { animate: true })}
+                onClick={() => handlePush("Gift")}
             >
                 <div className={css.buttonIcon}>
                     <IconSell />
@@ -49,7 +62,7 @@ const BottomTab: React.FC = () => {
             <button
                 type="button"
                 className={css.button}
-                onClick={() => push("Chats", { transitionType: "horizontal" }, { animate: true })}
+                onClick={() => handleReplace("Chats")}
             >
                 <div className={css.buttonIcon}>
                     <IconChatting />
@@ -60,7 +73,7 @@ const BottomTab: React.FC = () => {
             <button
                 type="button"
                 className={css.button}
-                onClick={() => push("My", { transitionType: "horizontal" }, { animate: true })}
+                onClick={() => handleReplace("My")}
             >
                 <div className={css.buttonIcon}>
                     <IconProfile />

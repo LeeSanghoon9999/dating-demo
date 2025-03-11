@@ -21,29 +21,15 @@ const borderColor =
         ? vars.$semantic.color.divider3
         : vars.$semantic.color.divider2;
 
-const activities = {
-  Main: dynamic(() => import("./activities/Main"), {
-    suspense: !isServer,
-  }),
-  Article: dynamic(() => import("./activities/Article"), {
-    suspense: !isServer,
-  }),
-  MapTab: dynamic(() => import("./activities/MapTab"), {
-    suspense: !isServer,
-  }),
-  Gift: dynamic(() => import("./activities/Gift"), {
-    suspense: !isServer,
-  }),
-  Chats: dynamic(() => import("./activities/Chats"), {
-    suspense: !isServer,
-  }),
-  My: dynamic(() => import("./activities/My"), {
-    suspense: !isServer,
-  }),
-  NotFound: dynamic(() => import("./activities/NotFound"), {
-    suspense: !isServer,
-  }),
-};
+const activities = ["Main", "Article", "MapTab", "Gift", "Chats", "My", "NotFound"].reduce(
+    (acc, name) => {
+      acc[name] = dynamic(() => import(`./activities/${name}`), {
+        suspense: !isServer,
+      });
+      return acc;
+    },
+    {} as Record<string, any>
+);
 export type TypeActivities = typeof activities;
 
 const routes = {
@@ -56,11 +42,61 @@ const routes = {
   NotFound: "/404",
 };
 
+const createLoader = (activityName: string, route: string) => ({
+                                                                 activityParams,
+                                                                 activityContext,
+                                                                 initialContext,
+                                                                 isInitialActivity,
+                                                               }: any) => {
+  // Article 액티비티에는 고유한 키를 사용, 그 외에는 Main의 키를 공유
+  const key =
+      activityName === "Article"
+          ? `${activityName}#${JSON.stringify(activityParams)}`
+          : "Main";
+
+  if (isInitialActivity) {
+    pagePropsMap[key] = {
+      _t: "ok",
+      pageProps: (initialContext as any).pageProps,
+    };
+  }
+
+  if (!pagePropsMap[key]) {
+    const promise = preloadNextPageProps({
+      activityParams,
+      route,
+      path: (activityContext as any).path,
+    }).then((pageProps) => {
+      pagePropsMap[key] = {
+        _t: "ok",
+        pageProps,
+      };
+    });
+
+    pagePropsMap[key] = {
+      _t: "pending",
+      promise,
+    };
+  }
+
+  return { key };
+};
+
+const loaders = {
+  Main: createLoader("Main", routes.Main),
+  Article: createLoader("Article", routes.Article),
+  MapTab: createLoader("MapTab", routes.MapTab),
+  Gift: createLoader("Gift", routes.Gift),
+  Chats: createLoader("Chats", routes.Chats),
+  My: createLoader("My", routes.My),
+};
+
 export const { Stack } = stackflow({
   transitionDuration: 350,
   activities,
   plugins: [
     basicRendererPlugin(),
+    // AppLayout에서 직접 관리하므로 기본 appBar 설정은 제거합니다.
     basicUIPlugin({
       theme,
       backgroundColor: vars.$semantic.color.paperDefault,
@@ -75,222 +111,7 @@ export const { Stack } = stackflow({
       fallbackActivity: () => "NotFound",
     }),
     preloadPlugin({
-      loaders: {
-        Main({
-               activityParams,
-               activityContext,
-               initialContext,
-               isInitialActivity,
-             }) {
-          const key = `Main#${JSON.stringify(activityParams)}`;
-
-          if (isInitialActivity) {
-            pagePropsMap[key] = {
-              _t: "ok",
-              pageProps: (initialContext as any).pageProps,
-            };
-          }
-
-          if (!pagePropsMap[key]) {
-            const promise = preloadNextPageProps({
-              activityParams,
-              route: routes.Main,
-              path: (activityContext as any).path,
-            }).then((pageProps) => {
-              pagePropsMap[key] = {
-                _t: "ok",
-                pageProps,
-              };
-            });
-
-            pagePropsMap[key] = {
-              _t: "pending",
-              promise,
-            };
-          }
-
-          return {
-            key,
-          };
-        },
-        Article({
-                  activityParams,
-                  activityContext,
-                  initialContext,
-                  isInitialActivity,
-                }) {
-          const key = `Article#${JSON.stringify(activityParams)}`;
-
-          if (isInitialActivity) {
-            pagePropsMap[key] = {
-              _t: "ok",
-              pageProps: (initialContext as any).pageProps,
-            };
-          }
-
-          if (!pagePropsMap[key]) {
-            const promise = preloadNextPageProps({
-              activityParams,
-              route: routes.Article,
-              path: (activityContext as any).path,
-            }).then((pageProps) => {
-              pagePropsMap[key] = {
-                _t: "ok",
-                pageProps,
-              };
-            });
-
-            pagePropsMap[key] = {
-              _t: "pending",
-              promise,
-            };
-          }
-
-          return {
-            key,
-          };
-        },
-        MapTab({
-                 activityParams,
-                 activityContext,
-                 initialContext,
-                 isInitialActivity,
-               }) {
-          const key = `MapTab#${JSON.stringify(activityParams)}`;
-
-          if (isInitialActivity) {
-            pagePropsMap[key] = {
-              _t: "ok",
-              pageProps: (initialContext as any).pageProps,
-            };
-          }
-
-          if (!pagePropsMap[key]) {
-            const promise = preloadNextPageProps({
-              activityParams,
-              route: routes.MapTab,
-              path: (activityContext as any).path,
-            }).then((pageProps) => {
-              pagePropsMap[key] = {
-                _t: "ok",
-                pageProps,
-              };
-            });
-
-            pagePropsMap[key] = {
-              _t: "pending",
-              promise,
-            };
-          }
-
-          return { key };
-        },
-        Gift({
-               activityParams,
-               activityContext,
-               initialContext,
-               isInitialActivity,
-             }) {
-          const key = `Gift#${JSON.stringify(activityParams)}`;
-
-          if (isInitialActivity) {
-            pagePropsMap[key] = {
-              _t: "ok",
-              pageProps: (initialContext as any).pageProps,
-            };
-          }
-
-          if (!pagePropsMap[key]) {
-            const promise = preloadNextPageProps({
-              activityParams,
-              route: routes.Gift,
-              path: (activityContext as any).path,
-            }).then((pageProps) => {
-              pagePropsMap[key] = {
-                _t: "ok",
-                pageProps,
-              };
-            });
-
-            pagePropsMap[key] = {
-              _t: "pending",
-              promise,
-            };
-          }
-
-          return { key };
-        },
-        Chats({
-                activityParams,
-                activityContext,
-                initialContext,
-                isInitialActivity,
-              }) {
-          const key = `Chats#${JSON.stringify(activityParams)}`;
-
-          if (isInitialActivity) {
-            pagePropsMap[key] = {
-              _t: "ok",
-              pageProps: (initialContext as any).pageProps,
-            };
-          }
-
-          if (!pagePropsMap[key]) {
-            const promise = preloadNextPageProps({
-              activityParams,
-              route: routes.Chats,
-              path: (activityContext as any).path,
-            }).then((pageProps) => {
-              pagePropsMap[key] = {
-                _t: "ok",
-                pageProps,
-              };
-            });
-
-            pagePropsMap[key] = {
-              _t: "pending",
-              promise,
-            };
-          }
-
-          return { key };
-        },
-        My({
-             activityParams,
-             activityContext,
-             initialContext,
-             isInitialActivity,
-           }) {
-          const key = `My#${JSON.stringify(activityParams)}`;
-
-          if (isInitialActivity) {
-            pagePropsMap[key] = {
-              _t: "ok",
-              pageProps: (initialContext as any).pageProps,
-            };
-          }
-
-          if (!pagePropsMap[key]) {
-            const promise = preloadNextPageProps({
-              activityParams,
-              route: routes.My,
-              path: (activityContext as any).path,
-            }).then((pageProps) => {
-              pagePropsMap[key] = {
-                _t: "ok",
-                pageProps,
-              };
-            });
-
-            pagePropsMap[key] = {
-              _t: "pending",
-              promise,
-            };
-          }
-
-          return { key };
-        },
-      },
+      loaders,
     }),
   ],
 });
